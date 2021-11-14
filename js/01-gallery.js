@@ -27,6 +27,11 @@ galleryRef.addEventListener('click', e => {
   instance.element().querySelector('img').src = e.target.dataset.source;
 
   instance.show();
+  window.addEventListener('keydown', e => {
+    if (e.code === 'Escape') {
+      instance.close();
+    }
+  });
 });
 
 const instance = basicLightbox.create(`<img src="" />`, {
